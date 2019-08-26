@@ -42,7 +42,7 @@ class Author
 	@id = DB[:connection].execute("SELECT last_insert_rowid() FROM author")[0][0]
   end 
 
-=begin 
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
@@ -51,9 +51,10 @@ class Author
       LIMIT 1
     SQL
  
-    DB[:connection].execute(sql, self.name).map do |row|
+    DB[:connection].execute(sql, name).map do |row|
       self.new_from_db(row)
     end.first
   end
-=end 
+
 end 
+

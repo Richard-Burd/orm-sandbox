@@ -27,6 +27,6 @@ a.save
 row = [1, "Dimetry"]
 
 Author.new_from_db(row)
-# Author.find_by_name("Alex")
+Author.find_by_name("Alex")
 
 binding.pry 
